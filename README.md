@@ -1,5 +1,8 @@
 # Starnavi-test-task
 Test task for the vacancy Starnavi frontend developer 
+
+In this app I use React route to navigate between home and form pages and redux-thunk for side effects
+
 How to run it:
 <li>copy git repo</li>
 <li>go to projet folder</li>
