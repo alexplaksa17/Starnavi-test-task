@@ -13,37 +13,22 @@ class FormFieldData extends Component{
 
     var dataInfo;
 
-    switch(type){
-      case "integer":
-      dataInfo=
-          <input type="text" pattern="[0-9]*" onChange={(e) => handleChange(index,value,e)} value={value} />
-      break;
-      case "double":
-      dataInfo=
-          <input type="number" step="any" onChange={(e) => handleChange(index,value,e)} value={value} />
-      break;
-      case "string":
-
-      dataInfo=
-
-        <input type="text" onChange={(e) => handleChange(index,value,e)} value={value}/>
-
-
-      break;
-      case "text":
-      dataInfo=
-
-          <textarea onChange={(e) => handleChange(index,value,e)}  value={value}/>
-
-
-      break;
-      case "bool":
-      dataInfo=
-
-        <input type="checkBox" className="boolValue" onChange ={(e) => handleCheckBox(index,value,e)}  checked={value}/>
-
-      break;
-      case "list":
+    if (type==="integer"){
+      dataInfo=<input type="text" pattern="[0-9]*" onChange={(e) => handleChange(index,value,e)} value={value} />
+    }
+    if (type==="double"){
+      dataInfo=<input type="number" step="any" onChange={(e) => handleChange(index,value,e)} value={value} />
+    }
+    if (type==="string"){
+      dataInfo=<input type="text" onChange={(e) => handleChange(index,value,e)} value={value}/>
+    }
+    if (type==="text"){
+      dataInfo=<textarea onChange={(e) => handleChange(index,value,e)}  value={value}/>
+    }
+    if (type==="bool"){
+      dataInfo=<input type="checkBox" className="boolValue" onChange ={(e) => handleCheckBox(index,value,e)}  checked={value}/>
+    }
+    if (type==="list"){
       dataInfo=value.map((elem,indexInList)=>{
         return(
           <li key={indexInList}>
@@ -52,9 +37,6 @@ class FormFieldData extends Component{
           </li>
         )
       });
-      break;
-      default:
-      break;
     }
     return(
       <div className="formField__value">
