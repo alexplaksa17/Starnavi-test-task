@@ -47,7 +47,8 @@ export const actionCreators = {
     }
 
     catch (e) {
-      dispatch({type: types.LOAD_FORMINFO_RES, payload: e, error: true})
+      console.log(e)
+      dispatch({type: types.LOAD_FORMINFO_RES, payload: e, })
     }
 
   },

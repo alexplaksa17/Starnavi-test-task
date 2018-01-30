@@ -62,7 +62,7 @@ class FormField extends Component{
 
     return(
       <div className="formField">
-        <span classNmae="formField__label">
+        <span className="formField__label">
           {data.label}
         </span>
         <FormFieldData type={data.type} index={index} handleChange={handleChange} value={data.value || data.values} handleCheckBox={handleCheckBox} handleListElemChange={handleListElemChange}/>
@@ -81,6 +81,7 @@ const mapStateToProps = (state) => ({
   loading: state.form.loading,
   error: state.form.error,
   form: state.form,
+  feedData: state.feed.forms
 
 })
 class Form extends Component {
@@ -95,7 +96,13 @@ class Form extends Component {
 
   componentDidMount() {
     const {dispatch} = this.props;
+    if (this.props.feedData.length===0){
+      dispatch(actionCreators.loadForms())
+    }
+
+
     dispatch(actionCreators.loadFormInfo(this.props.match.params.number))
+
   }
   handleChange=(index,prevValue,evt)=> {
     const val = (evt.target.validity.valid) ? evt.target.value : prevValue;
