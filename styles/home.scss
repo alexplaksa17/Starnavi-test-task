@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Roboto:500');
+.home{
+  display: flex;
+  flex-direction: column;
+
+}
+.feed{
+  display:flex;
+  flex: auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items:flex-start;
+  font-family: 'Roboto', sans-serif;
+  margin-bottom: 8px;
+
+}
